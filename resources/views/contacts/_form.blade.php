@@ -88,6 +88,10 @@
                 @enderror
             </div>
         </div>
+        @if ($contact)
+            <input type="text" name="id" value="{{ $contact->id }}" hidden>
+        @endif
+
         <hr>
         <div class="form-group row mb-0">
             <div class="col-md-9 offset-md-3">

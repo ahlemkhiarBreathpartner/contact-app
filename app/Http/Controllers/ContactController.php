@@ -63,8 +63,8 @@ class ContactController extends Controller
             'address' => 'required',
             'company_id' => 'required|exists:companies,id',
         ]);
-        $contact = Contact::
-        Contact::update($request->all());
+        $contact = Contact::find($request->id);
+        $contact->update($request->all());
         return redirect()->route('contacts.index')
             ->with("message", "Contact has been added successfully");
     }
